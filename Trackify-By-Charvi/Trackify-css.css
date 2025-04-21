@@ -1,0 +1,229 @@
+/* General Body Styles */
+body {
+  position: relative;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: #f5f5fa; /* Whisper color */
+  color: #4b4b4b;
+  min-height: 100vh;
+  overflow-x: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Clouds */
+.cloud, .bg-bird {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.cloud1, .cloud2 {
+  background: #fff;
+  border-radius: 50px;
+  filter: drop-shadow(0 8px 30px rgba(255,255,255,0.3));
+  z-index: 0;
+}
+.cloud1 {
+  width: 180px;
+  height: 60px;
+  top: 8vh;
+  left: 2vw;
+  animation: cloudFloat1 38s linear infinite alternate;
+  position: absolute;
+}
+.cloud1:before, .cloud1:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+.cloud1:before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  left: 30px;
+}
+.cloud1:after {
+  width: 60px;
+  height: 60px;
+  top: -25px;
+  left: 90px;
+}
+.cloud2 {
+  width: 220px;
+  height: 70px;
+  top: 18vh;
+  right: 3vw;
+  animation: cloudFloat2 44s linear infinite alternate-reverse;
+  position: absolute;
+}
+.cloud2:before, .cloud2:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+.cloud2:before {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 40px;
+}
+.cloud2:after {
+  width: 80px;
+  height: 80px;
+  top: -35px;
+  left: 110px;
+}
+@keyframes cloudFloat1 {
+  0% { left: 2vw; transform: translateZ(0) translateY(0);}
+  50% { transform: translateZ(50px) translateY(-15px);}
+  100% { left: 60vw; transform: translateZ(0) translateY(0);}
+}
+@keyframes cloudFloat2 {
+  0% { right: 3vw; transform: translateZ(0) translateY(0);}
+  50% { transform: translateZ(70px) translateY(-20px);}
+  100% { right: 60vw; transform: translateZ(0) translateY(0);}
+}
+
+/* Birds */
+.bg-bird {
+  top: 7vh;
+}
+.bird1 {
+  left: -60px;
+  animation: birdFly1 14s linear infinite;
+  top: 7vh;
+}
+.bird2 {
+  left: -50px;
+  animation: birdFly2 18s linear infinite;
+  top: 11vh;
+}
+.bird3 {
+  left: -40px;
+  animation: birdFly3 20s linear infinite;
+  top: 14vh;
+}
+@keyframes birdFly1 {
+  0% { left: -60px; }
+  100% { left: 100vw; }
+}
+@keyframes birdFly2 {
+  0% { left: -50px; }
+  100% { left: 100vw; }
+}
+@keyframes birdFly3 {
+  0% { left: -40px; }
+  100% { left: 100vw; }
+}
+
+/* Welcome Box and Screens */
+.welcome-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: none;
+}
+#welcome-screen {
+  background: linear-gradient(120deg, #fbcfe8 60%, #bae6fd 100%);
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 40px 0 #a4a6d344;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 400px;
+  margin: 7vh auto 0 auto;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+.screen {
+  background: #fff;
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 40px 0 #a4a6d344;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 400px;
+  margin: 2vh auto 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Hide screens by default except welcome */
+#pet-name-screen,
+#main-app,
+#pet-details-screen {   /* <-- Add this line for your new page */
+  display: none;
+}
+
+/* Cute Titles and Prompts */
+.cute-title {
+  font-family: 'Pacifico', cursive;
+  color: #a78bfa;
+  font-size: 2.1rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+  animation: titlePop 0.7s;
+}
+@keyframes titlePop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.cute-subtitle {
+  font-family: 'Quicksand', cursive;
+  color: #4b4b4b;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+.cute-prompt {
+  color: #f472b6;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Quicksand', sans-serif;
+}
+.emoji {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+/* Pet List Styles */
+#pet-list img {
+  box-shadow: 0 2px 8px #e0e7ff88;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid #fbcfe8;
+}
+#pet-list h3 {
+  color: #a78bfa;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0.3rem;
+}
+
+/* Button Styles */
+button,
+input[type="submit"] {
+  background: linear-gradient(90deg, #a78bfa 60%, #fbcfe8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.7rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #a78bfa33;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 0.7rem;
+}
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #fbcfe8 60%, #a78bfa 100%);
+  transform: scale(1.06);
+  box-shadow: 0 4px 18px #a78bfa55;
+}
+
+/* Add your other styles below as needed... */

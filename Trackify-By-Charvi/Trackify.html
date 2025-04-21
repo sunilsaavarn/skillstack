@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trackify - Pet Tracker</title>
+  <link rel="stylesheet" href="Trackify-css.css" />
+  <link rel="stylesheet" href="styles2.css" />
+  <link rel="stylesheet" href="grand-october-four.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Clouds -->
+  <div class="floating cloud cloud1"></div>
+  <div class="floating cloud cloud2"></div>
+
+  <!-- Birds -->
+  <div class="bg-bird bird1">
+    <svg width="48" height="28" viewBox="0 0 48 28" fill="none">
+      <ellipse cx="24" cy="18" rx="8" ry="5" fill="#64748b"/>
+      <path d="M24 18 Q 10 8 4 22" stroke="#64748b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M24 18 Q 38 8 44 22" stroke="#64748b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="31" cy="16" rx="2.2" ry="1.7" fill="#64748b"/>
+    </svg>
+  </div>
+  <div class="bg-bird bird2">
+    <svg width="38" height="20" viewBox="0 0 38 20" fill="none">
+      <ellipse cx="18" cy="14" rx="6" ry="3.5" fill="#334155"/>
+      <path d="M18 14 Q 7 7 2 16" stroke="#334155" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M18 14 Q 29 7 36 16" stroke="#334155" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="23.5" cy="13" rx="1.7" ry="1.2" fill="#334155"/>
+    </svg>
+  </div>
+  <div class="bg-bird bird3">
+    <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+      <ellipse cx="15" cy="10" rx="4.5" ry="2.5" fill="#4b5563"/>
+      <path d="M15 10 Q 7 4 2 12" stroke="#4b5563" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M15 10 Q 23 4 30 12" stroke="#4b5563" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="19" cy="9" rx="1.1" ry="0.8" fill="#4b5563"/>
+    </svg>
+  </div>
+
+  <!-- Welcome Screen -->
+  <div class="welcome-flex-row">
+    <div class="screen" id="welcome-screen">
+      <h1 class="cute-title">🐱 Welcome to Trackify!</h1>
+      <h2 class="cute-subtitle">Your dreamy pastel pet companion ✨</h2>
+      <p class="cute-prompt">Hi sweet friend! 🌸<br>What should we call you?</p>
+      <form id="user-name-form">
+        <input type="text" id="user-name" placeholder="Type your magical name..." required />
+        <button type="submit">✨ Let's Begin! ✨</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Pet Name Screen -->
+  <div class="screen" id="pet-name-screen" style="display:none;">
+    <h2 class="cute-title">🐾 What's your pet's name?</h2>
+    <form id="pet-info-form">
+      <input type="text" id="pet-name" placeholder="Pet's name..." required />
+      <button type="submit">Next</button>
+    </form>
+  </div>
+
+  <!-- Main App Screen -->
+  <div class="screen" id="main-app" style="display:none;">
+    <h2 class="cute-title">Welcome, <span id="display-user-name-main"></span>!</h2>
+    <h3>Your pet: <span id="pet-display-name"></span></h3>
+    <button id="show-details-btn">Show Pet Details</button>
+    <!-- Main app content goes here -->
+  </div>
+
+  <!-- Pet Details Screen -->
+  <div class="screen" id="pet-details-screen" style="display:none;">
+    <h2 class="cute-title">Pet Details</h2>
+    <p class="cute-prompt">Here you can add more info about your pet, track activities, and more!</p>
+    <form id="pet-details-form">
+      <input type="text" id="pet-age" placeholder="Pet's age" class="cute-input" />
+      <input type="text" id="pet-breed" placeholder="Pet's breed" class="cute-input" />
+      <textarea id="pet-notes" placeholder="Notes about your pet..." class="cute-input"></textarea>
+      <button type="submit">Save Details</button>
+    </form>
+    <button id="back-to-main-btn">Back</button>
+  </div>
+
+  <script src="Trackify-js.js"></script>
+</body>
+</html>
